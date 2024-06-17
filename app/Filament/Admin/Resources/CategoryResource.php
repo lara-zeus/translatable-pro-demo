@@ -29,6 +29,7 @@ class CategoryResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->defaultSort('id', 'desc')
             ->columns([
                 // @phpstan-ignore-next-line
                 Tables\Columns\TextColumn::make('name')

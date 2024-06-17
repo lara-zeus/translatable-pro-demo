@@ -7,6 +7,8 @@ use App\Filament\Admin\Resources\BookResource\RelationManagers\ChaptersRelationM
 use App\Models\Book;
 use App\Models\Category;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
@@ -30,14 +32,26 @@ class BookResource extends Resource
                     ->required()
                     ->columnSpanFull(),
 
-                MultiLang::make('desc')
-                    ->setTabSchema(
-                        TiptapEditor::make('desc'),
-                    ),
+                Grid::make()
+                    ->columns()
+                    ->schema([
+                        MultiLang::make('desc')
+                            ->columnSpan(1)
+                            ->setTabSchema(
+                                TiptapEditor::make('desc'),
+                            ),
 
-                Select::make('cat_id')
-                    ->getOptionLabelFromRecordUsing(fn (Category $record) => $record->name)
-                    ->relationship('cat', 'id'),
+                        Grid::make()
+                            ->columnSpan(1)
+                            ->columns(1)
+                            ->schema([
+                                Select::make('cat_id')
+                                    ->getOptionLabelFromRecordUsing(fn (Category $record) => $record->name)
+                                    ->relationship('cat', 'id'),
+                                FileUpload::make('cover')->image(),
+
+                            ]),
+                    ]),
 
                 Section::make('meta')
                     ->relationship('meta')
@@ -45,19 +59,14 @@ class BookResource extends Resource
                         MultiLang::make('title'),
                     ]),
 
-                /*MultiLang::make('chapters')
-                    ->dehydrated(false)
-                    ->setTabSchema(
-                        Select::make('chapters')
-                            ->relationship(),
-                    ),*/
+                Repeater::make('chapters')
+                    ->columnSpanFull()
+                    ->grid()
+                    ->relationship('chapters')
+                    ->schema([
+                        MultiLang::make('title'),
+                    ]),
 
-                /*MultiLang::make('cover')
-                    ->setTabSchema(
-                        FileUpload::make('langs')->image(),
-                    ),*/
-
-                FileUpload::make('cover')->image(),
             ]);
     }
 

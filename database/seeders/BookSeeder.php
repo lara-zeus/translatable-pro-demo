@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Book;
 use App\Models\Category;
+use App\Models\Chapter;
 use App\Models\Meta;
 use Illuminate\Database\Seeder;
 
@@ -35,6 +36,14 @@ class BookSeeder extends Seeder
             'title' => [
                 'en' => 'Book Meta',
                 'ar' => 'بيانات اضافية',
+            ],
+        ]);
+
+        Chapter::create([
+            'book_id' => $book->id,
+            'title' => [
+                'en' => 'Chapter 1',
+                'ar' => 'الفصل الأول',
             ],
         ]);
     }
