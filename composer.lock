@@ -2294,28 +2294,28 @@
         },
         {
             "name": "lara-zeus/translatable-pro",
-            "version": "v0.0.1",
+            "version": "v0.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:lara-zeus/translatable-pro.git",
-                "reference": "eb1c6f6ec7a2fbdc83f64f4d61336c56b13fc363"
+                "reference": "5ec0f27103ca3f221a466a696c8bfa19e86c53b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lara-zeus/translatable-pro/zipball/eb1c6f6ec7a2fbdc83f64f4d61336c56b13fc363",
-                "reference": "eb1c6f6ec7a2fbdc83f64f4d61336c56b13fc363",
+                "url": "https://api.github.com/repos/lara-zeus/translatable-pro/zipball/5ec0f27103ca3f221a466a696c8bfa19e86c53b6",
+                "reference": "5ec0f27103ca3f221a466a696c8bfa19e86c53b6",
                 "shasum": ""
             },
             "require": {
-                "filament/filament": "^3.1",
-                "php": "^8.1"
+                "filament/filament": "^3.2",
+                "php": "^8.2"
             },
             "require-dev": {
                 "laravel/pint": "^1.0",
-                "nunomaduro/collision": "^7.0",
-                "nunomaduro/larastan": "^2.0.1",
+                "nunomaduro/collision": "^8.0",
+                "nunomaduro/larastan": "^2.0",
                 "nunomaduro/phpinsights": "^2.8",
-                "orchestra/testbench": "^8.0",
+                "orchestra/testbench": "^9.0",
                 "phpstan/extension-installer": "^1.1"
             },
             "type": "library",
@@ -2382,7 +2382,7 @@
                     "url": "https://www.buymeacoffee.com/larazeus"
                 }
             ],
-            "time": "2024-06-17T00:09:50+00:00"
+            "time": "2024-06-17T06:22:09+00:00"
         },
         {
             "name": "laravel/framework",
@@ -10188,16 +10188,16 @@
         },
         {
             "name": "sebastian/recursion-context",
-            "version": "6.0.0",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "b75224967b5a466925c6d54e68edd0edf8dd4ed4"
+                "reference": "2f15508e17af4ea35129bbc32ce28a814d9c7426"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/b75224967b5a466925c6d54e68edd0edf8dd4ed4",
-                "reference": "b75224967b5a466925c6d54e68edd0edf8dd4ed4",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/2f15508e17af4ea35129bbc32ce28a814d9c7426",
+                "reference": "2f15508e17af4ea35129bbc32ce28a814d9c7426",
                 "shasum": ""
             },
             "require": {
@@ -10240,7 +10240,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/recursion-context/issues",
                 "security": "https://github.com/sebastianbergmann/recursion-context/security/policy",
-                "source": "https://github.com/sebastianbergmann/recursion-context/tree/6.0.0"
+                "source": "https://github.com/sebastianbergmann/recursion-context/tree/6.0.1"
             },
             "funding": [
                 {
@@ -10248,7 +10248,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-02T06:08:48+00:00"
+            "time": "2024-06-17T05:22:57+00:00"
         },
         {
             "name": "sebastian/type",
