@@ -1,0 +1,20 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app/
+        - zeus/
+
+    # Level 9 is the highest level
+    level: 5
+
+    checkOctaneCompatibility: true
+    checkModelProperties: true
+
+    #ignoreErrors:
+     #   -
+      #      identifier: missingType.iterableValue
+       # -
+        #    identifier: missingType.generics

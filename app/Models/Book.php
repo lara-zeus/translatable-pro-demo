@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use LaraZeus\TranslatablePro\Casts\PhrasesCast;
+use LaraZeus\TranslatablePro\Models\Concerns\HasPhrases;
+
+class Book extends Model
+{
+    use HasFactory;
+    use HasPhrases;
+
+    protected $guarded = [];
+
+    protected $casts = [
+        'title' => PhrasesCast::class,
+        //'cover' => PhrasesCast::class,
+        'desc' => PhrasesCast::class,
+    ];
+
+    public function chapters(): HasMany
+    {
+        return $this->hasMany(Chapter::class);
+    }
+
+    public function cat(): HasOne
+    {
+        return $this->hasOne(Category::class);
+    }
+
+    public function meta(): HasOne
+    {
+        return $this->hasOne(Meta::class);
+    }
+}
