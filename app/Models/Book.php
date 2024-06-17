@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use LaraZeus\TranslatablePro\Casts\PhrasesCast;
@@ -27,9 +28,9 @@ class Book extends Model
         return $this->hasMany(Chapter::class);
     }
 
-    public function cat(): HasOne
+    public function cat(): BelongsTo
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function meta(): HasOne

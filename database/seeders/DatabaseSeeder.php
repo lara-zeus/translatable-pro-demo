@@ -9,17 +9,12 @@ use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
-
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'admin@lara-zeus.com',
-            'password' => Hash::make('password'),
+            'email' => 'info@larazeus.com',
+            'password' => Hash::make('zeus#larazeus'),
         ]);
 
         $this->call(BookSeeder::class);

@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->string('lang_code');
             $table->string('key');
-            $table->string('value')->nullable()->default('');
+            $table->longText('value')->nullable();
 
             $table->unique(['model_type', 'model_id', 'key', 'lang_code']);
             $table->timestamps();
