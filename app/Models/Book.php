@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use LaraZeus\TranslatablePro\Casts\PhrasesCast;
 use LaraZeus\TranslatablePro\Models\Concerns\HasPhrases;
 
+/**
+ * @property array $title
+ * @property array $desc
+ */
 class Book extends Model
 {
     use HasFactory;
@@ -19,7 +23,6 @@ class Book extends Model
 
     protected $casts = [
         'title' => PhrasesCast::class,
-        //'cover' => PhrasesCast::class,
         'desc' => PhrasesCast::class,
     ];
 

@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use LaraZeus\TranslatablePro\Casts\PhrasesCast;
 use LaraZeus\TranslatablePro\Models\Concerns\HasPhrases;
 
+/**
+ * @property array $title
+ */
 class Chapter extends Model
 {
-    use HasFactory;
     use HasPhrases;
 
     protected $casts = [

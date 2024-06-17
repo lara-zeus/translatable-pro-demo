@@ -4,12 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'Page Title' }}</title>
+        <title>{{ $title ?? 'Translatable Pro Demo' }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <div class="bg-sky-50 max-w-6xl mx-auto">
-            <x-layouts.nav/>
+
+        <x-layouts.nav/>
+
+        <div class="bg-sky-50 max-w-6xl mx-auto rounded-b-2xl shadow-md">
 
             <section class="text-sky-700">
                 {{ $slot }}

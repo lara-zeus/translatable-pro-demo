@@ -83,6 +83,7 @@ class BookResource extends Resource
             ])
             ->filters([
                 SelectFilter::make('cat_id')
+                    ->label('Category')
                     ->getOptionLabelFromRecordUsing(fn (Category $record) => $record->name ?? '-')
                     ->relationship('cat', 'id'),
             ])

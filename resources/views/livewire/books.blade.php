@@ -2,9 +2,10 @@
     @foreach($books as $book)
         <div class="-m-4 flex flex-wrap">
             <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                <a class="relative block h-48 overflow-hidden rounded">
-                    <img alt="cover" class="block h-full w-full object-cover object-center"
-                         src="{{ $book->cover ?? 'https://dummyimage.com/420x260' }}" />
+                <a class="block aspect-video">
+                    <img alt="cover"
+                         class="block h-full w-full object-cover object-center rounded-lg shadow-lg"
+                         src="{{ $book->cover ?? 'https://picsum.photos/420/260?random=1' }}" />
                 </a>
                 <div class="mt-4">
                     <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">

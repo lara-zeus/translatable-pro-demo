@@ -15,18 +15,18 @@ class BookSeeder extends Seeder
         $cat = Category::create([
             'name' => [
                 'en' => 'Developers Books',
-                'ar' => 'كتب المطورين',
+                'pt' => 'Livros para desenvolvedores',
             ],
         ]);
 
         $book = Book::create([
             'title' => [
                 'en' => 'Consuming APIs in Laravel',
-                'ar' => 'Consuming APIs in Laravel in arabic',
+                'pt' => 'Consumindo APIs no Laravel',
             ],
             'desc' => [
-                'en' => '{"type":"doc","content":[{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"Book Desc"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"Book Desc"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"Book Desc"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"}}]}',
-                'ar' => '{"type":"doc","content":[{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"توصيف الكتاب"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"توصيف الكتاب"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"توصيف الكتاب"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"}}]}',
+                'en' => '{"type":"doc","content":[{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"Book Summary"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"Book Summary"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"Book Summary"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"}}]}',
+                'pt' => '{"type":"doc","content":[{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"Resumo do livro"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"Resumo do livro"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"},"content":[{"type":"text","text":"Resumo do livro"}]},{"type":"paragraph","attrs":{"class":null,"style":null,"textAlign":"start"}}]}',
             ],
             'cat_id' => $cat->id,
         ]);
@@ -35,7 +35,7 @@ class BookSeeder extends Seeder
             'book_id' => $book->id,
             'title' => [
                 'en' => 'Book Meta',
-                'ar' => 'بيانات اضافية',
+                'pt' => 'Meta do livro',
             ],
         ]);
 
@@ -43,7 +43,7 @@ class BookSeeder extends Seeder
             'book_id' => $book->id,
             'title' => [
                 'en' => 'Chapter 1',
-                'ar' => 'الفصل الأول',
+                'pt' => 'Capítulo 1',
             ],
         ]);
     }
