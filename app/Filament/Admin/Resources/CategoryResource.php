@@ -24,13 +24,6 @@ class CategoryResource extends Resource
                 MultiLang::make('name')
                     ->required()
                     ->columnSpanFull(),
-
-                Forms\Components\TextInput::make('times_used')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
-                Forms\Components\Toggle::make('isPublished')
-                    ->required(),
             ]);
     }
 
