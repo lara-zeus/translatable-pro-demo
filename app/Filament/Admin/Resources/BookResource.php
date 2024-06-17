@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\App\Resources;
+namespace App\Filament\Admin\Resources;
 
-use App\Filament\App\Resources\BookResource\Pages;
-use App\Filament\App\Resources\BookResource\RelationManagers\ChaptersRelationManager;
+use App\Filament\Admin\Resources\BookResource\Pages;
+use App\Filament\Admin\Resources\BookResource\RelationManagers\ChaptersRelationManager;
 use App\Models\Book;
 use App\Models\Category;
 use Filament\Forms\Components\FileUpload;

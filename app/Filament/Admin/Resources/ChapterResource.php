@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\App\Resources;
+namespace App\Filament\Admin\Resources;
 
-use App\Filament\App\Resources\ChapterResource\Pages;
+use App\Filament\Admin\Resources\ChapterResource\Pages;
 use App\Models\Chapter;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\App\Resources\ChapterResource\Pages;
+namespace App\Filament\Admin\Resources\ChapterResource\Pages;
 
-use App\Filament\App\Resources\ChapterResource;
+use App\Filament\Admin\Resources\ChapterResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateChapter extends CreateRecord
