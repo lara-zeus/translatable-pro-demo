@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.bord{
+    border: solid 1px coral;
+}
+

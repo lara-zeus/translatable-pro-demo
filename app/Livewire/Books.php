@@ -3,13 +3,21 @@
 namespace App\Livewire;
 
 use App\Models\Book;
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Books extends Component
 {
-    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|\Illuminate\Contracts\Foundation\Application
+    use WithPagination;
+
+    public function render(): View
     {
+        $books = Book::query()
+            ->with(['phrases','cat.phrases'])
+            ->paginate(100);
+
         return view('livewire.books')
-            ->with('books', Book::get());
+            ->with('books', $books);
     }
 }
