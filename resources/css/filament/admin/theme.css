@@ -3,3 +3,7 @@
 @import '/vendor/lara-zeus/translatable-pro/resources/css/plugin.css';
 
 @config 'tailwind.config.js';
+
+.bord{
+    border: solid 1px coral;
+}
