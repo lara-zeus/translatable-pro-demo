@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use LaraZeus\TranslatablePro\Casts\PhrasesCast;
@@ -39,5 +40,9 @@ class Book extends Model
     public function meta(): HasOne
     {
         return $this->hasOne(Meta::class);
+    }
+
+    public function categories(): BelongsToMany {
+        return $this->belongsToMany(Category::class, 'category_has_books')->withPivot(['notes']);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources;
 
 use App\Filament\Admin\Resources\BookResource\Pages;
+use App\Filament\Admin\Resources\BookResource\RelationManagers\CategoriesRelationManager;
 use App\Filament\Admin\Resources\BookResource\RelationManagers\ChaptersRelationManager;
 use App\Models\Book;
 use App\Models\Category;
@@ -102,6 +103,7 @@ class BookResource extends Resource
     {
         return [
             ChaptersRelationManager::class,
+            CategoriesRelationManager::class,
         ];
     }
 

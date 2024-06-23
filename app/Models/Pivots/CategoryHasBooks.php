@@ -1,26 +1,27 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Pivots;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 use LaraZeus\TranslatablePro\Casts\PhrasesCast;
 use LaraZeus\TranslatablePro\Models\Concerns\HasPhrases;
 
 /**
  * @property string $name
  */
-class Category extends Model
+class CategoryHasBooks extends Pivot
 {
     use HasFactory;
     use HasPhrases;
 
-    protected $casts = [
-        'name' => PhrasesCast::class,
-    ];
-
-    public function books(): BelongsToMany {
-        return $this->belongsToMany(Book::class, 'category_has_books');
+    public function getTable()
+    {
+        return 'category_has_books';
     }
+
+    protected $casts = [
+        'notes' => PhrasesCast::class,
+    ];
 }
