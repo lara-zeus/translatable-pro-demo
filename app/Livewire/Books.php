@@ -15,7 +15,7 @@ class Books extends Component
     {
         $books = Book::query()
             ->with(['phrases', 'cat.phrases'])
-            ->paginate(100);
+            ->paginate(21);
 
         return view('livewire.books')
             ->with('books', $books);

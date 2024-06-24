@@ -74,9 +74,9 @@ class BookResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('created_at'),
                 TextColumn::make('title'),
                 TextColumn::make('cat.name'),
+                TextColumn::make('created_at'),
             ])
             ->filters([
                 SelectFilter::make('cat.name')

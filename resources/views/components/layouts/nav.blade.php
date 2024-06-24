@@ -6,6 +6,9 @@
     </div>
     <div class="lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow">
         <div class="lg:flex lg:items-stretch lg:justify-end ml-auto">
+            <a href="{{ url('/admin') }}" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-gray-700 no-underline flex items-center hover:bg-gray-200 rounded-tr-2xl">
+                Admin
+            </a>
             <a href="https://larazeus.com/translatable-pro" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-gray-700 no-underline flex items-center hover:bg-gray-200 rounded-tr-2xl">
                 Get Translatable Pro
             </a>

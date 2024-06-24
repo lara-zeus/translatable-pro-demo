@@ -25,7 +25,7 @@ class BookFactory extends Factory
                 'ar' => fake()->paragraph(),
                 'en' => fake()->paragraph(),
             ],
-            'cover' => '22',
+            'cover' => 'https://picsum.photos/200/300?random='.rand(1, 9999),
             'cat_id' => '33',
         ];
     }
