@@ -2357,16 +2357,16 @@
         },
         {
             "name": "lara-zeus/translatable-pro",
-            "version": "v0.0.8",
+            "version": "v0.0.9",
             "source": {
                 "type": "git",
                 "url": "git@github.com:lara-zeus/translatable-pro.git",
-                "reference": "abd38b06a982f50f5bc86d064c86cb153cdf9f1d"
+                "reference": "796f4ce22354ee4259233cc0d14b3d55fe1977f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lara-zeus/translatable-pro/zipball/abd38b06a982f50f5bc86d064c86cb153cdf9f1d",
-                "reference": "abd38b06a982f50f5bc86d064c86cb153cdf9f1d",
+                "url": "https://api.github.com/repos/lara-zeus/translatable-pro/zipball/796f4ce22354ee4259233cc0d14b3d55fe1977f6",
+                "reference": "796f4ce22354ee4259233cc0d14b3d55fe1977f6",
                 "shasum": ""
             },
             "require": {
@@ -2446,7 +2446,7 @@
                     "url": "https://www.buymeacoffee.com/larazeus"
                 }
             ],
-            "time": "2024-06-24T15:46:03+00:00"
+            "time": "2024-06-24T16:52:00+00:00"
         },
         {
             "name": "laravel/framework",

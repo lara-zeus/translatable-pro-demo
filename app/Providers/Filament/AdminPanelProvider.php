@@ -28,6 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->spa()
             ->homeUrl('/')
             ->login(Login::class)
             ->viteTheme('resources/css/filament/admin/theme.css')
