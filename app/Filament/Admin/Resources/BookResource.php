@@ -18,7 +18,6 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
-use Illuminate\Database\Eloquent\Builder;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
 class BookResource extends Resource
@@ -52,7 +51,6 @@ class BookResource extends Resource
                                     ->getOptionLabelFromRecordUsing(fn (Category $record) => $record->name)
                                     ->relationship('cat', 'id'),
                                 FileUpload::make('cover')->image(),
-
                             ]),
                     ]),
 
@@ -75,18 +73,14 @@ class BookResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(fn (Builder $query) => $query->with(['phrases','cat.phrases']))
-            ->defaultSort('id', 'desc')
             ->columns([
-                // @phpstan-ignore-next-line
-                TextColumn::make('title')->phraseable(),
-                // @phpstan-ignore-next-line
-                TextColumn::make('cat.name')->phraseable(),
+                TextColumn::make('created_at'),
+                TextColumn::make('title'),
+                TextColumn::make('cat.name'),
             ])
             ->filters([
-                SelectFilter::make('cat_id')
+                SelectFilter::make('cat.name')
                     ->label('Category')
-                    ->getOptionLabelFromRecordUsing(fn (Category $record) => $record->name ?? '-')
                     ->relationship('cat', 'id'),
             ])
             ->actions([

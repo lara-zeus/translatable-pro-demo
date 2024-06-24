@@ -1,0 +1,12 @@
+{
+    "require": {
+        "lara-zeus/translatable-pro": "*"
+    },
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../p/translatable-pro"
+        }
+    ]
+}
