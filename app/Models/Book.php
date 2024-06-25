@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use LaraZeus\TranslatablePro\Casts\PhrasesCast;
 use LaraZeus\TranslatablePro\Models\Concerns\HasPhrases;
+use LaraZeus\TranslatablePro\Models\Phrase;
 
 /**
  * @property array $title
@@ -21,6 +22,12 @@ class Book extends Model
     use HasPhrases;
 
     protected $guarded = [];
+
+
+    public function getPhraseClass(): string
+    {
+        return Flower::class;
+    }
 
     protected $casts = [
         'title' => PhrasesCast::class,
