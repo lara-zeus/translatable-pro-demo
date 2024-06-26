@@ -40,7 +40,8 @@ class BookResource extends Resource
                         MultiLang::make('desc')
                             ->columnSpan(1)
                             ->setTabSchema(
-                                TiptapEditor::make('desc'),
+                                TiptapEditor::make('desc')
+                                    ->profile('minimal'),
                             ),
 
                         Grid::make()
