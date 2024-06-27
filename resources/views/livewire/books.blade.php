@@ -1,5 +1,15 @@
 <div class="container mx-auto px-5 py-10">
 
+    <h5 class="mb-4">Queries Details</h5>
+    <div class="prose grid grid-cols-2 gap-3 mb-20">
+        @foreach($queries as $query)
+            <div class="bg-sky-100 rounded-2xl shadow overflow-scroll py-3 px-4 space-y-2">
+                <p class="font-semibold">Query: <span class="text-sm">({{ $query['time'] }} ms)</span></p>
+                <pre><code>{{ $query['query'] }}</code></pre>
+            </div>
+        @endforeach
+    </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
         @foreach($books as $book)
             <div class="w-full -m-4 flex flex-wrap">
