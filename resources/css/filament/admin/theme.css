@@ -7,3 +7,11 @@
 .bord{
     border: solid 1px coral;
 }
+
+.driver-overlay path{
+    @apply fill-gray-500/50 !important;
+}
+
+.driver-popover * {
+    font-family: var(--font-family), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}

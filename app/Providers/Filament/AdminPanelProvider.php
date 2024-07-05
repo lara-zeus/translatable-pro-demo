@@ -3,13 +3,14 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\Auth\Login;
+use App\Filament\Pages\Dashboard;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\View\PanelsRenderHook;
 use Filament\Widgets;
 use Illuminate\Contracts\View\View;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -19,6 +20,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use JibayMcs\FilamentTour\FilamentTourPlugin;
 use LaraZeus\TranslatablePro\TranslatableProPlugin;
 
 class AdminPanelProvider extends PanelProvider
@@ -31,6 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->spa()
             ->homeUrl('/')
+            ->font('Roboto Flex')
             ->login(Login::class)
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->colors([
@@ -40,13 +43,19 @@ class AdminPanelProvider extends PanelProvider
                 'panels::footer',
                 fn (): View => view('filament.hooks.footer'),
             )
+            ->renderHook(
+                PanelsRenderHook::TOPBAR_END,
+                fn (): View => view('filament.hooks.topbar'),
+            )
             ->discoverResources(in: app_path('Filament/Admin/Resources/'), for: 'App\\Filament\\Admin\\Resources')
             ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\\Filament\\Admin\\Pages')
             ->pages([
-                Pages\Dashboard::class,
+                Dashboard::class,
             ])
             ->plugins([
                 TranslatableProPlugin::make(),
+                FilamentTourPlugin::make()
+                    ->onlyVisibleOnce(app()->isProduction()),
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([

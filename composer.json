@@ -7,10 +7,11 @@
     "require": {
         "php": "^8.2",
         "awcodes/filament-tiptap-editor": "^3.0",
+        "fakerphp/faker": "^1.23",
         "filament/filament": "^3.2",
+        "jibaymcs/filament-tour": "^3.0",
         "lara-zeus/translatable-pro": "^0.0",
         "laravel/framework": "^11.0",
-        "fakerphp/faker": "^1.23",
         "laravel/tinker": "^2.9"
     },
     "require-dev": {

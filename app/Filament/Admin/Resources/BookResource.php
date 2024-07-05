@@ -49,6 +49,7 @@ class BookResource extends Resource
                             ->columns(1)
                             ->schema([
                                 Select::make('cat_id')
+                                    ->extraAttributes(['class' => 'cat_form_input'])
                                     ->getOptionLabelFromRecordUsing(fn (Category $record) => $record->name)
                                     ->relationship('cat', 'id'),
                                 FileUpload::make('cover')->image(),
@@ -56,12 +57,14 @@ class BookResource extends Resource
                     ]),
 
                 Section::make('meta')
+                    ->extraAttributes(['class' => 'meta_form_input'])
                     ->relationship('meta')
                     ->schema([
                         MultiLang::make('title'),
                     ]),
 
                 Repeater::make('chapters')
+                    ->extraAttributes(['class' => 'chapters_form_input'])
                     ->columnSpanFull()
                     ->grid()
                     ->relationship('chapters')
@@ -76,7 +79,7 @@ class BookResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title'),
-                TextColumn::make('cat.name'),
+                TextColumn::make('cat.name')->label('category'),
                 TextColumn::make('created_at'),
             ])
             ->filters([
