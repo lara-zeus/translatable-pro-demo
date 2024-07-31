@@ -9,4 +9,7 @@ return [
     'page_switcher' => [
         'enabled' => true,
     ],
+
+    'auto_phraseable' => true,
+
 ];
