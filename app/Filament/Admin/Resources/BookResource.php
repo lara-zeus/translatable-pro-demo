@@ -18,7 +18,9 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
+use LaraZeus\TranslatablePro\Facades\ActiveLanguage;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
+use LaraZeus\TranslatablePro\Models\Phrase;
 
 class BookResource extends Resource
 {
@@ -49,9 +51,17 @@ class BookResource extends Resource
                             ->columns(1)
                             ->schema([
                                 Select::make('cat_id')
-                                    ->extraAttributes(['class' => 'cat_form_input'])
-                                    ->getOptionLabelFromRecordUsing(fn (Category $record) => $record->name)
-                                    ->relationship('cat', 'id'),
+                                    ->relationship('cat', 'id')
+                                    ->searchable()
+                                    ->getSearchResultsUsing(fn(string $search) => Phrase::query()
+                                        ->where('model_type', Category::class)
+                                        ->where('key', 'name')
+                                        ->where('lang_code', ActiveLanguage::get())
+                                        ->where('value', 'like', '%'.$search.'%')
+                                        //->take(10)
+                                        ->pluck('value','model_id')
+                                    )
+                                ,
                                 FileUpload::make('cover')->image(),
                             ]),
                     ]),
