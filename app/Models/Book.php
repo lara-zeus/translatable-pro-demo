@@ -19,6 +19,8 @@ class Book extends Model
     use HasFactory;
     use HasPhrases;
 
+    protected $with = ['cat'];
+
     protected $guarded = [];
 
     protected $casts = [

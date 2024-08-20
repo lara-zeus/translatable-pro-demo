@@ -51,17 +51,8 @@ class BookResource extends Resource
                             ->columns(1)
                             ->schema([
                                 Select::make('cat_id')
-                                    ->relationship('cat', 'id')
-                                    ->searchable()
-                                    ->getSearchResultsUsing(fn(string $search) => Phrase::query()
-                                        ->where('model_type', Category::class)
-                                        ->where('key', 'name')
-                                        ->where('lang_code', ActiveLanguage::get())
-                                        ->where('value', 'like', '%'.$search.'%')
-                                        //->take(10)
-                                        ->pluck('value','model_id')
-                                    )
-                                ,
+                                    ->relationship('cat', 'name')
+                                    ->phrasesSearchable(),
                                 FileUpload::make('cover')->image(),
                             ]),
                     ]),
@@ -88,8 +79,8 @@ class BookResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
-                TextColumn::make('cat.name')->label('category'),
+                TextColumn::make('title')->phraseable(),
+                TextColumn::make('cat.name')->label('category')->phraseable(),
                 TextColumn::make('created_at'),
             ])
             ->filters([

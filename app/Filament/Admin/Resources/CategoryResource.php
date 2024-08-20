@@ -9,6 +9,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
+use Filament\Resources\Pages\Page;
 
 class CategoryResource extends Resource
 {
@@ -53,12 +54,20 @@ class CategoryResource extends Resource
             ]);
     }
 
+    public static function getRecordSubNavigation(Page $page): array
+    {
+        return $page->generateNavigationItems([
+            Pages\CatBooks::class,
+        ]);
+    }
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListCategories::route('/'),
             'create' => Pages\CreateCategory::route('/create'),
             'edit' => Pages\EditCategory::route('/{record}/edit'),
+            'books' => Pages\CatBooks::route('/{record}/books'),
         ];
     }
 }

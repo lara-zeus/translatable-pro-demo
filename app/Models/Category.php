@@ -18,4 +18,9 @@ class Category extends Model
     protected $casts = [
         'name' => PhrasesCast::class,
     ];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class,'cat_id');
+    }
 }
