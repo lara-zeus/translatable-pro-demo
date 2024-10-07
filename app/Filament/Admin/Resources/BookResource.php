@@ -5,7 +5,6 @@ namespace App\Filament\Admin\Resources;
 use App\Filament\Admin\Resources\BookResource\Pages;
 use App\Filament\Admin\Resources\BookResource\RelationManagers\ChaptersRelationManager;
 use App\Models\Book;
-use App\Models\Category;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
@@ -18,9 +17,9 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
-use LaraZeus\TranslatablePro\Facades\ActiveLanguage;
+use IbrahimBougaoua\FilaProgress\Tables\Columns\CircleProgress;
+use IbrahimBougaoua\FilaProgress\Tables\Columns\ProgressBar;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
-use LaraZeus\TranslatablePro\Models\Phrase;
 
 class BookResource extends Resource
 {
@@ -79,6 +78,8 @@ class BookResource extends Resource
     {
         return $table
             ->columns([
+                CircleProgress::make('translation_progress')
+                    ->toggleable(),
                 TextColumn::make('title')->phraseable(),
                 TextColumn::make('cat.name')->label('category')->phraseable(),
                 TextColumn::make('created_at'),
