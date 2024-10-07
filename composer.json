@@ -9,6 +9,7 @@
         "awcodes/filament-tiptap-editor": "^3.0",
         "fakerphp/faker": "^1.23",
         "filament/filament": "^3.2",
+        "ibrahim-bougaoua/filaprogress": "^0.1.0",
         "jibaymcs/filament-tour": "^3.0",
         "lara-zeus/translatable-pro": "^1.0",
         "laravel/framework": "^11.0",

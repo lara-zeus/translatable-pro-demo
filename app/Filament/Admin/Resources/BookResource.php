@@ -18,7 +18,6 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
 use IbrahimBougaoua\FilaProgress\Tables\Columns\CircleProgress;
-use IbrahimBougaoua\FilaProgress\Tables\Columns\ProgressBar;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
 class BookResource extends Resource
