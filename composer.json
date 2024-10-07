@@ -12,7 +12,8 @@
         "jibaymcs/filament-tour": "^3.0",
         "lara-zeus/translatable-pro": "^1.0",
         "laravel/framework": "^11.0",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "sentry/sentry-laravel": "^4.9"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
