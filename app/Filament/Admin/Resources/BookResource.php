@@ -76,6 +76,7 @@ class BookResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->paginated([10, 25, 50])
             ->columns([
                 CircleProgress::make('translation_progress')
                     ->toggleable(),
