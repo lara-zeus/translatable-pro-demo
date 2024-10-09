@@ -55,7 +55,7 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 TranslatableProPlugin::make(),
                 FilamentTourPlugin::make()
-                    ->onlyVisibleOnce(app()->isProduction()),
+                    ->onlyVisibleOnce(),//app()->isProduction()
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
