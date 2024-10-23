@@ -31,7 +31,7 @@ class BookResource extends Resource
         return $form
             ->schema([
                 MultiLang::make('title')
-                    ->required()
+                    ->require()
                     ->columnSpanFull(),
 
                 Grid::make()

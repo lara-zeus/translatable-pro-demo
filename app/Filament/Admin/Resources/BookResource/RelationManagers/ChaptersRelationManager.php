@@ -17,7 +17,7 @@ class ChaptersRelationManager extends RelationManager
         return $form
             ->schema([
                 MultiLang::make('title')
-                    ->required()
+                    ->require()
                     ->columnSpanFull(),
             ]);
     }

@@ -23,7 +23,7 @@ class ChapterResource extends Resource
         return $form
             ->schema([
                 MultiLang::make('title')
-                    ->required()
+                    ->require()
                     ->columnSpanFull(),
 
                 TextInput::make('pages_number')

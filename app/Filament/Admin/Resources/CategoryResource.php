@@ -22,7 +22,7 @@ class CategoryResource extends Resource
         return $form
             ->schema([
                 MultiLang::make('name')
-                    ->required()
+                    ->require()
                     ->columnSpanFull(),
             ]);
     }

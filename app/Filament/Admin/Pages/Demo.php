@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Pages;
 
 use App\Models\Book;
+use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Pages\Page;
@@ -19,8 +20,9 @@ class Demo extends Page
     public function mount(): void
     {
         $this->form->fill([
+            'vvv' => 'vvv',
             'title' => [
-                'en' => 'en title',
+                'en' => null,
                 'pt' => 'pt title',
             ],
         ]);
@@ -31,12 +33,22 @@ class Demo extends Page
         return $form
             ->model(Book::class)
             ->schema([
-                TextInput::make('vvv'),
+                TextInput::make('vvv')
+                    ->default('aaa')
+                    ->required(),
+                Placeholder::make('`MultiLang` Options')
+                    ->content('You configure the component per language. disable and enable or set required'),
                 MultiLang::make('title')
                     ->default(['en' => 'dsdd'])
-                    ->required()
+                    ->require(['en'])
+                    ->disable(['pt'])
                     ->columnSpanFull(),
             ])
             ->statePath('data');
+    }
+
+    public function create()
+    {
+        dd($this->form->getState());
     }
 }
