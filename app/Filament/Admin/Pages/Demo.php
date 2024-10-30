@@ -22,7 +22,7 @@ class Demo extends Page
         $this->form->fill([
             'vvv' => 'vvv',
             'title' => [
-                'en' => null,
+                'en' => '111',
                 'pt' => 'pt title',
             ],
         ]);
@@ -39,9 +39,11 @@ class Demo extends Page
                 Placeholder::make('`MultiLang` Options')
                     ->content('You configure the component per language. disable and enable or set required'),
                 MultiLang::make('title')
-                    ->default(['en' => 'dsdd'])
                     ->require(['en'])
                     ->disable(['pt'])
+                    ->setTabSchema(
+                        TextInput::make('title')
+                    )
                     ->columnSpanFull(),
             ])
             ->statePath('data');
