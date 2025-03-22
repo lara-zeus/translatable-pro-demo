@@ -3,10 +3,11 @@
 namespace App\Filament\Admin\Pages;
 
 use App\Models\Book;
-use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Pages\Page;
+use Illuminate\Support\HtmlString;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
 class Demo extends Page
@@ -33,18 +34,30 @@ class Demo extends Page
         return $form
             ->model(Book::class)
             ->schema([
-                TextInput::make('vvv')
-                    ->default('aaa')
+                TextInput::make('name')
+                    ->default('default input value')
                     ->required(),
-                Placeholder::make('`MultiLang` Options')
-                    ->content('You configure the component per language. disable and enable or set required'),
-                MultiLang::make('title')
-                    ->require(['en'])
-                    ->disable(['pt'])
-                    ->setTabSchema(
+
+                Section::make('MultiLang Component Options')
+                    ->description('You can configure the component per language. disable and enable or set required')
+                    ->schema([
+                        MultiLang::make('title')
+                            ->require(['en'])
+                            ->disable(['pt'])
+                            ->setTabSchema(
+                                TextInput::make('title')
+                            )
+                            ->columnSpanFull(),
+                    ]),
+                Section::make('Custom Component')
+                    ->description(new HtmlString(
+                        'and you can use any community components for the translations input'
+                        .' like <a target="_blank" class="text-info-500" href="https://github.com/Abdulmajeed-Jamaan/filament-translatable-tabs">filament translatable tabs</a>'
+                    ))
+                    ->schema([
                         TextInput::make('title')
-                    )
-                    ->columnSpanFull(),
+                            ->translatableTabs(),
+                    ]),
             ])
             ->statePath('data');
     }

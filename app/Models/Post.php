@@ -9,8 +9,8 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
 
 class Post extends Model
 {
-    use HasSEO;
     use HasPhrases;
+    use HasSEO;
 
     protected $casts = [
         'description' => PhrasesCast::class,

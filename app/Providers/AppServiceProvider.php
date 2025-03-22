@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -10,6 +11,17 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
+        TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
+            $component
+                // locales labels
+                ->localesLabels([
+                    'en' => 'English',
+                    'pt' => 'Portuguese',
+                ])
+                // default locales
+                ->locales(['en', 'pt']);
+        });
+
         Model::unguard();
 
         Blade::directive('zeus', function () {

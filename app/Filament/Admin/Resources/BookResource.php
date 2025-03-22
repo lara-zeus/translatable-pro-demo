@@ -76,7 +76,6 @@ class BookResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            //->modifyQueryUsing(fn($query)=>$query->whereRelation('phrases','id','>',1))
             ->paginated([10, 25, 50])
             ->columns([
                 CircleProgress::make('translation_progress')

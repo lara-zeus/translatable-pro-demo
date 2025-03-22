@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            //$table->text('title');
+            // $table->text('title');
             $table->string('cover')->nullable();
             $table->integer('cat_id')->nullable();
             $table->timestamps();
