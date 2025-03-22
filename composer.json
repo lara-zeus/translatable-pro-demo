@@ -9,10 +9,11 @@
         "awcodes/filament-tiptap-editor": "^3.0",
         "fakerphp/faker": "^1.23",
         "filament/filament": "^3.2",
+        "ibrahim-bougaoua/filaprogress": "dev-laravel-12",
         "jibaymcs/filament-tour": "dev-laravel-12",
         "lara-zeus/translatable-pro": "^1.0",
         "laravel/framework": "^12.0",
-        "ibrahim-bougaoua/filaprogress": "dev-laravel-12",
+        "ralphjsmit/laravel-filament-seo": "^1.5",
         "sentry/sentry-laravel": "^4.9"
     },
     "require-dev": {
