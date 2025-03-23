@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -12,7 +13,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
+            $languages = (new Collection(config('zeus-translatable-pro.languages')))
+                ->search(fn ($lang) => $lang['code'] === app()->getLocale());
+
             $component
+                ->activeTab($languages + 1)
                 // locales labels
                 ->localesLabels([
                     'en' => 'English',
