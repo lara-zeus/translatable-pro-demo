@@ -13,18 +13,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
-            $languages = (new Collection(config('zeus-translatable-pro.languages')))
-                ->search(fn ($lang) => $lang['code'] === app()->getLocale());
+            $languages = (new Collection(config('zeus-translatable-pro.languages')));
 
             $component
-                ->activeTab($languages + 1)
-                // locales labels
-                ->localesLabels([
-                    'en' => 'English',
-                    'pt' => 'Portuguese',
-                ])
-                // default locales
-                ->locales(['en', 'pt']);
+                ->activeTab($languages->search(fn($lang) => $lang['code'] === app()->getLocale()) + 1)
+                ->localesLabels($languages->mapWithKeys(function ($item) {
+                    return [$item['code'] => $item['name']];
+                })->toArray())
+                ->locales($languages->pluck('code')->toArray());
         });
 
         Model::unguard();
@@ -34,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Blade::directive('stillStats', function ($code) {
-            if (! app()->isLocal()) {
+            if (!app()->isLocal()) {
                 return '<!-- stats --><script async defer data-website-id="'.$code.'" src="https://stats.still-code.com/script.js"></script>';
             }
 
