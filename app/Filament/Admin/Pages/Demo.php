@@ -56,7 +56,8 @@ class Demo extends Page
                     ))
                     ->schema([
                         TextInput::make('title')
-                            ->translatableTabs(),
+                            ->translatableTabs()
+                            ->extraAttributes(['class' => 'zu-langs-tabs']),
                     ]),
             ])
             ->statePath('data');
