@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources;
 
 use App\Filament\Admin\Resources\BookResource\Pages;
+use App\Filament\Admin\Resources\BookResource\RelationManagers\CategoriesRelationManager;
 use App\Filament\Admin\Resources\BookResource\RelationManagers\ChaptersRelationManager;
 use App\Models\Book;
 use Filament\Forms\Components\FileUpload;
@@ -105,6 +106,7 @@ class BookResource extends Resource
     {
         return [
             ChaptersRelationManager::class,
+            CategoriesRelationManager::class,
         ];
     }
 
