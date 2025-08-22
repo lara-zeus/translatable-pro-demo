@@ -16,7 +16,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use FilamentTiptapEditor\TiptapEditor;
+//use FilamentTiptapEditor\TiptapEditor;
 use LaraZeus\Progress\Tables\Columns\CircleProgress;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
@@ -38,11 +38,11 @@ class BookResource extends Resource
                     ->columns()
                     ->schema([
                         MultiLang::make('desc')
-                            ->columnSpan(1)
-                            ->setTabSchema(
-                                TiptapEditor::make('desc')
-                                    ->profile('minimal'),
-                            ),
+                            ->columnSpan(1),
+//                            ->setTabSchema(
+//                                TiptapEditor::make('desc')
+//                                    ->profile('minimal'),
+//                            ),
 
                         Grid::make()
                             ->columnSpan(1)
