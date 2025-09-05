@@ -2,17 +2,17 @@
 
 namespace App\Filament\Pages;
 
+use Exception;
+
 //use JibayMcs\FilamentTour\Tour\HasTour;
 //use JibayMcs\FilamentTour\Tour\Step;
 //use JibayMcs\FilamentTour\Tour\Tour;
-
 class Dashboard extends \Filament\Pages\Dashboard
 {
 //    use HasTour;
-
-    /**
-     * @throws \Exception
-     */
+/**
+ * @throws Exception
+ */
 //    public function tours(): array
 //    {
 //        return [
@@ -28,4 +28,5 @@ class Dashboard extends \Filament\Pages\Dashboard
 //                ),
 //        ];
 //    }
+
 }

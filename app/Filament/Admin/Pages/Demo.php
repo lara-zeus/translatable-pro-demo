@@ -2,19 +2,19 @@
 
 namespace App\Filament\Admin\Pages;
 
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Section;
 use App\Models\Book;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Pages\Page;
 use Illuminate\Support\HtmlString;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
 class Demo extends Page
 {
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string $view = 'filament.admin.pages.demo';
+    protected string $view = 'filament.admin.pages.demo';
 
     public ?array $data = [];
 
@@ -29,11 +29,11 @@ class Demo extends Page
         ]);
     }
 
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->model(Book::class)
-            ->schema([
+            ->components([
                 TextInput::make('name')
                     ->default('default input value')
                     ->required(),

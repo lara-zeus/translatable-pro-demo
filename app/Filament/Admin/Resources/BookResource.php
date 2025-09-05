@@ -2,15 +2,22 @@
 
 namespace App\Filament\Admin\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Admin\Resources\BookResource\Pages\ListBooks;
+use App\Filament\Admin\Resources\BookResource\Pages\CreateBook;
+use App\Filament\Admin\Resources\BookResource\Pages\EditBook;
 use App\Filament\Admin\Resources\BookResource\Pages;
 use App\Filament\Admin\Resources\BookResource\RelationManagers\ChaptersRelationManager;
 use App\Models\Book;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -24,12 +31,12 @@ class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
 
-    protected static ?string $navigationGroup = 'Book Store';
+    protected static string | \UnitEnum | null $navigationGroup = 'Book Store';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 MultiLang::make('title')
                     ->require()
                     ->columnSpanFull(),
@@ -89,13 +96,13 @@ class BookResource extends Resource
                     ->label('Category')
                     ->relationship('cat', 'id'),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\ViewAction::make(),
+            ->recordActions([
+                EditAction::make(),
+                ViewAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -110,9 +117,9 @@ class BookResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBooks::route('/'),
-            'create' => Pages\CreateBook::route('/create'),
-            'edit' => Pages\EditBook::route('/{record}/edit'),
+            'index' => ListBooks::route('/'),
+            'create' => CreateBook::route('/create'),
+            'edit' => EditBook::route('/{record}/edit'),
         ];
     }
 }

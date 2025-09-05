@@ -2,9 +2,17 @@
 
 namespace App\Filament\Admin\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Admin\Resources\CategoryResource\Pages\CatBooks;
+use App\Filament\Admin\Resources\CategoryResource\Pages\ListCategories;
+use App\Filament\Admin\Resources\CategoryResource\Pages\CreateCategory;
+use App\Filament\Admin\Resources\CategoryResource\Pages\EditCategory;
 use App\Filament\Admin\Resources\CategoryResource\Pages;
 use App\Models\Category;
-use Filament\Forms\Form;
 use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -15,12 +23,12 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static ?string $navigationGroup = 'Book Store';
+    protected static string | \UnitEnum | null $navigationGroup = 'Book Store';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 MultiLang::make('name')
                     ->require()
                     ->columnSpanFull(),
@@ -34,23 +42,23 @@ class CategoryResource extends Resource
             ->defaultSort('id', 'desc')
             ->columns([
                 // @phpstan-ignore-next-line
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('name')
                     ->phraseable(),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
+                TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -58,17 +66,17 @@ class CategoryResource extends Resource
     public static function getRecordSubNavigation(Page $page): array
     {
         return $page->generateNavigationItems([
-            Pages\CatBooks::class,
+            CatBooks::class,
         ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCategories::route('/'),
-            'create' => Pages\CreateCategory::route('/create'),
-            'edit' => Pages\EditCategory::route('/{record}/edit'),
-            'books' => Pages\CatBooks::route('/{record}/books'),
+            'index' => ListCategories::route('/'),
+            'create' => CreateCategory::route('/create'),
+            'edit' => EditCategory::route('/{record}/edit'),
+            'books' => CatBooks::route('/{record}/books'),
         ];
     }
 }

@@ -2,10 +2,16 @@
 
 namespace App\Filament\Admin\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Admin\Resources\ChapterResource\Pages\ListChapters;
+use App\Filament\Admin\Resources\ChapterResource\Pages\CreateChapter;
+use App\Filament\Admin\Resources\ChapterResource\Pages\EditChapter;
 use App\Filament\Admin\Resources\ChapterResource\Pages;
 use App\Models\Chapter;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -18,10 +24,10 @@ class ChapterResource extends Resource
 
     protected static bool $shouldRegisterNavigation = false;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 MultiLang::make('title')
                     ->require()
                     ->columnSpanFull(),
@@ -64,12 +70,12 @@ class ChapterResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -84,9 +90,9 @@ class ChapterResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListChapters::route('/'),
-            'create' => Pages\CreateChapter::route('/create'),
-            'edit' => Pages\EditChapter::route('/{record}/edit'),
+            'index' => ListChapters::route('/'),
+            'create' => CreateChapter::route('/create'),
+            'edit' => EditChapter::route('/{record}/edit'),
         ];
     }
 }
