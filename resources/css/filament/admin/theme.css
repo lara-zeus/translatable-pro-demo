@@ -1,10 +1,12 @@
 @import '/vendor/filament/filament/resources/css/theme.css';
+@import '/vendor/awcodes/filament-tiptap-editor/resources/css/plugin.css';
+@import '/vendor/lara-zeus/translatable-pro/resources/css/plugin.css';
 
-@source '/vendor/awcodes/filament-tiptap-editor/resources/css/plugin.css';
-@source '/vendor/lara-zeus/translatable-pro/resources/css/plugin.css';
 @source '../../../../app/Filament';
 @source '../../../../resources/views/filament';
-
+@source './app/Filament/**/*.php';
+@source './resources/views/filament/**/*.blade.php';
+@source './vendor/awcodes/filament-tiptap-editor/resources/**/*.blade.php';
 .bord{
     border: solid 1px coral;
 }

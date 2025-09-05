@@ -1,5 +1,5 @@
 import preset from '../../../../vendor/filament/filament/tailwind.config.preset'
-
+//  todo @ahmed delete this file or contents
 export default {
     presets: [preset],
     content: [
