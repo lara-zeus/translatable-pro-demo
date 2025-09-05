@@ -6,11 +6,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "abdulmajeed-jamaan/filament-translatable-tabs": "^3.0",
+        "abdulmajeed-jamaan/filament-translatable-tabs": "^4.0",
         "fakerphp/faker": "^1.23",
-        "filament/filament": "^3.2",
-        "lara-zeus/progress": "^1.0",
-        "lara-zeus/translatable-pro": "^1.0",
+        "filament/filament": "^4.0",
+        "lara-zeus/progress": "dev-dependabot/composer/filament/filament-tw-4.0",
+        "lara-zeus/translatable-pro": "dev-main",
         "laravel/framework": "^12.0",
         "sentry/sentry-laravel": "^4.9"
     },
@@ -79,8 +79,11 @@
     "prefer-stable": true,
     "repositories": [
         {
-            "type": "github",
-            "url": "git@github.com:lara-zeus/translatable-pro.git"
+            "type": "path",
+            "url": "../translatable-pro",
+            "options": {
+                "symlink": true
+            }
         },
         {
             "type": "github",
