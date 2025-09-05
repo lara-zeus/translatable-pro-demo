@@ -54,7 +54,7 @@ class AdminPanelProvider extends PanelProvider
                 Dashboard::class,
             ])
             ->plugins([
-//                TranslatableProPlugin::make(),
+                TranslatableProPlugin::make(),
 //                FilamentTourPlugin::make()
 //                    ->onlyVisibleOnce(),
             ])
