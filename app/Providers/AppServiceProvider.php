@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
                 })
                 ->toArray();
             $locales = $languages->pluck('code')->toArray();
-            $activeTab = $languages->search(fn($lang) => $lang['code'] === app()->getLocale()) + 1;
+            $activeTab = $languages->search(fn ($lang) => $lang['code'] === app()->getLocale()) + 1;
 
             $component
                 ->activeTab($activeTab)
@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Blade::directive('stillStats', function ($code) {
-            if (!app()->isLocal()) {
+            if (! app()->isLocal()) {
                 return '<!-- stats --><script async defer data-website-id="'.$code.'" src="https://stats.still-code.com/script.js"></script>';
             }
 

@@ -2,9 +2,7 @@
 
 namespace App\Filament\Pages\Auth;
 
-use Filament\Pages\Auth\Login as BaseLogin;
-
-class Login extends BaseLogin
+class Login extends \Filament\Auth\Pages\Login
 {
     public function mount(): void
     {

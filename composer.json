@@ -6,31 +6,29 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "abdulmajeed-jamaan/filament-translatable-tabs": "^3.0",
-        "awcodes/filament-tiptap-editor": "^3.0",
+        "abdulmajeed-jamaan/filament-translatable-tabs": "^4.0",
         "fakerphp/faker": "^1.23",
-        "filament/filament": "^3.2",
-        "lara-zeus/progress": "^1.0",
-        "jibaymcs/filament-tour": "dev-laravel-12",
-        "lara-zeus/translatable-pro": "^1.0",
+        "filament/filament": "^4.0",
+        "lara-zeus/progress": "dev-dependabot/composer/filament/filament-tw-4.0",
+        "lara-zeus/translatable-pro": "^2.0",
         "laravel/framework": "^12.0",
-        "ralphjsmit/laravel-filament-seo": "^1.5",
         "sentry/sentry-laravel": "^4.9"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
-        "laravel/tinker": "^2.9",
-        "laravel/pint": "^1.13",
-        "nunomaduro/collision": "^8.0",
-        "spatie/laravel-ignition": "^2.4",
         "barryvdh/laravel-debugbar": "^3.9",
+        "filament/upgrade": "^4.0",
         "larastan/larastan": "^3.1",
         "laravel-lang/common": "^6.0",
+        "laravel/pint": "^1.13",
+        "laravel/sail": "^1.26",
+        "laravel/tinker": "^2.9",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "laravel/sail": "^1.26",
-        "mockery/mockery": "^1.6",
-        "phpunit/phpunit": "^11.0"
+        "phpunit/phpunit": "^11.0",
+        "roave/security-advisories": "dev-latest",
+        "spatie/laravel-ignition": "^2.4"
     },
     "autoload": {
         "psr-4": {
@@ -77,16 +75,12 @@
             "phpstan/extension-installer": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "repositories": [
         {
             "type": "github",
-            "url": "git@github.com:lara-zeus/translatable-pro.git"
-        },
-        {
-            "type": "github",
-            "url": "https://github.com/atmonshi/filament-tour"
+            "url": "https://github.com/lara-zeus/translatable-pro"
         }
     ]
 }
