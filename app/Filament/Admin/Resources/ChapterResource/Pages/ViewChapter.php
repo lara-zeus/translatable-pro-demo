@@ -3,7 +3,7 @@
 namespace App\Filament\Admin\Resources\ChapterResource\Pages;
 
 use App\Filament\Admin\Resources\ChapterResource;
-use Filament\Actions;
+use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
 class ViewChapter extends ViewRecord
@@ -13,7 +13,7 @@ class ViewChapter extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\EditAction::make(),
+            EditAction::make(),
         ];
     }
 }
