@@ -2,18 +2,16 @@
 
 namespace App\Filament\Admin\Resources;
 
-use Filament\Schemas\Schema;
-use Filament\Actions\EditAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use App\Filament\Admin\Resources\ChapterResource\Pages\ListChapters;
 use App\Filament\Admin\Resources\ChapterResource\Pages\CreateChapter;
 use App\Filament\Admin\Resources\ChapterResource\Pages\EditChapter;
-use App\Filament\Admin\Resources\ChapterResource\Pages;
+use App\Filament\Admin\Resources\ChapterResource\Pages\ListChapters;
 use App\Models\Chapter;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;

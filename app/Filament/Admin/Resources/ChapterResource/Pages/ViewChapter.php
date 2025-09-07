@@ -2,9 +2,8 @@
 
 namespace App\Filament\Admin\Resources\ChapterResource\Pages;
 
-use Filament\Actions\EditAction;
 use App\Filament\Admin\Resources\ChapterResource;
-use Filament\Actions;
+use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
 class ViewChapter extends ViewRecord

@@ -2,28 +2,26 @@
 
 namespace App\Filament\Admin\Resources;
 
-use Filament\Schemas\Schema;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use App\Filament\Admin\Resources\BookResource\Pages\ListBooks;
 use App\Filament\Admin\Resources\BookResource\Pages\CreateBook;
 use App\Filament\Admin\Resources\BookResource\Pages\EditBook;
-use App\Filament\Admin\Resources\BookResource\Pages;
+use App\Filament\Admin\Resources\BookResource\Pages\ListBooks;
 use App\Filament\Admin\Resources\BookResource\RelationManagers\ChaptersRelationManager;
 use App\Models\Book;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-//use FilamentTiptapEditor\TiptapEditor;
+// use FilamentTiptapEditor\TiptapEditor;
 use LaraZeus\Progress\Tables\Columns\CircleProgress;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
@@ -31,7 +29,7 @@ class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Book Store';
+    protected static string|\UnitEnum|null $navigationGroup = 'Book Store';
 
     public static function form(Schema $schema): Schema
     {
@@ -46,10 +44,10 @@ class BookResource extends Resource
                     ->schema([
                         MultiLang::make('desc')
                             ->columnSpan(1),
-//                            ->setTabSchema(
-//                                TiptapEditor::make('desc')
-//                                    ->profile('minimal'),
-//                            ),
+                        //                            ->setTabSchema(
+                        //                                TiptapEditor::make('desc')
+                        //                                    ->profile('minimal'),
+                        //                            ),
 
                         Grid::make()
                             ->columnSpan(1)

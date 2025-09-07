@@ -10,7 +10,7 @@
         "fakerphp/faker": "^1.23",
         "filament/filament": "^4.0",
         "lara-zeus/progress": "dev-dependabot/composer/filament/filament-tw-4.0",
-        "lara-zeus/translatable-pro": "dev-main",
+        "lara-zeus/translatable-pro": "^2.0",
         "laravel/framework": "^12.0",
         "sentry/sentry-laravel": "^4.9"
     },
@@ -75,19 +75,12 @@
             "phpstan/extension-installer": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "repositories": [
         {
-            "type": "path",
-            "url": "../translatable-pro",
-            "options": {
-                "symlink": true
-            }
-        },
-        {
             "type": "github",
-            "url": "https://github.com/atmonshi/filament-tour"
+            "url": "https://github.com/lara-zeus/translatable-pro"
         }
     ]
 }
