@@ -16,7 +16,6 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use FilamentTiptapEditor\TiptapEditor;
 use LaraZeus\Progress\Tables\Columns\CircleProgress;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
