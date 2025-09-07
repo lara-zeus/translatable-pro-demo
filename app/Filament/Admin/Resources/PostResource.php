@@ -4,13 +4,11 @@ namespace App\Filament\Admin\Resources;
 
 use App\Filament\Admin\Resources\PostResource\Pages;
 use App\Models\Post;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
 class PostResource extends Resource
 {
@@ -18,6 +16,11 @@ class PostResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function canAccess(): bool
+    {
+        return false;
+    }
+    
     public static function form(Form $form): Form
     {
         return $form
@@ -26,14 +29,14 @@ class PostResource extends Resource
                     ->required()
                     ->columnSpanFull(),
 
-                Section::make('seo')
+                /*Section::make('seo')
                     ->relationship('seo')
                     ->compact()
                     ->columns()
                     ->schema([
                         MultiLang::make('title'),
                         MultiLang::make('description'),
-                    ]),
+                    ]),*/
             ]);
     }
 
@@ -41,7 +44,7 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('seo.title'),
+                Tables\Columns\TextColumn::make('phrases.title'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

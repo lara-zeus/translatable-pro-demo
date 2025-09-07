@@ -8,6 +8,7 @@ use App\Models\Book;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
@@ -39,8 +40,7 @@ class BookResource extends Resource
                         MultiLang::make('desc')
                             ->columnSpan(1)
                             ->setTabSchema(
-                                TiptapEditor::make('desc')
-                                    ->profile('minimal'),
+                                RichEditor::make('desc'),
                             ),
 
                         Grid::make()

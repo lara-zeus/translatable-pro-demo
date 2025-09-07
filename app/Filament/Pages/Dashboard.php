@@ -2,18 +2,12 @@
 
 namespace App\Filament\Pages;
 
-use JibayMcs\FilamentTour\Tour\HasTour;
-use JibayMcs\FilamentTour\Tour\Step;
-use JibayMcs\FilamentTour\Tour\Tour;
-
 class Dashboard extends \Filament\Pages\Dashboard
 {
-    use HasTour;
-
     /**
      * @throws \Exception
      */
-    public function tours(): array
+    /*public function tours(): array
     {
         return [
             Tour::make(id: 'main')
@@ -27,5 +21,5 @@ class Dashboard extends \Filament\Pages\Dashboard
                         ->description('it will render the page with the selected language !')
                 ),
         ];
-    }
+    }*/
 }

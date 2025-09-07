@@ -5,14 +5,9 @@ namespace App\Filament\Admin\Resources\BookResource\Pages;
 use App\Filament\Admin\Resources\BookResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use JibayMcs\FilamentTour\Tour\HasTour;
-use JibayMcs\FilamentTour\Tour\Step;
-use JibayMcs\FilamentTour\Tour\Tour;
 
 class ListBooks extends ListRecords
 {
-    use HasTour;
-
     protected static string $resource = BookResource::class;
 
     protected function getHeaderActions(): array
@@ -22,7 +17,7 @@ class ListBooks extends ListRecords
         ];
     }
 
-    public function tours(): array
+    /*public function tours(): array
     {
         return [
             Tour::make(id: 'main')
@@ -36,5 +31,5 @@ class ListBooks extends ListRecords
                         ->description('try searching for titles or categories, any translatable are searchable by default')
                 ),
         ];
-    }
+    }*/
 }

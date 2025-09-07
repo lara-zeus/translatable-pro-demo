@@ -7,14 +7,11 @@
     "require": {
         "php": "^8.3",
         "abdulmajeed-jamaan/filament-translatable-tabs": "^3.0",
-        "awcodes/filament-tiptap-editor": "^3.0",
         "fakerphp/faker": "^1.23",
         "filament/filament": "^3.2",
         "lara-zeus/progress": "^1.0",
-        "jibaymcs/filament-tour": "dev-laravel-12",
         "lara-zeus/translatable-pro": "^1.0",
         "laravel/framework": "^12.0",
-        "ralphjsmit/laravel-filament-seo": "^1.5",
         "sentry/sentry-laravel": "^4.9"
     },
     "require-dev": {

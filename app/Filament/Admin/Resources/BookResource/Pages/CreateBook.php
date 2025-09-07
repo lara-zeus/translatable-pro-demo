@@ -4,17 +4,12 @@ namespace App\Filament\Admin\Resources\BookResource\Pages;
 
 use App\Filament\Admin\Resources\BookResource;
 use Filament\Resources\Pages\CreateRecord;
-use JibayMcs\FilamentTour\Tour\HasTour;
-use JibayMcs\FilamentTour\Tour\Step;
-use JibayMcs\FilamentTour\Tour\Tour;
 
 class CreateBook extends CreateRecord
 {
-    use HasTour;
-
     protected static string $resource = BookResource::class;
 
-    public function tours(): array
+    /*public function tours(): array
     {
         return [
             Tour::make(id: 'main')
@@ -40,5 +35,5 @@ class CreateBook extends CreateRecord
                         ->description('Chapters is a `hasMany` relationship, and effortless its supported with translatable'),
                 ),
         ];
-    }
+    }*/
 }
