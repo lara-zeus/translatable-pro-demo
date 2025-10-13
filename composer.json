@@ -9,8 +9,8 @@
         "abdulmajeed-jamaan/filament-translatable-tabs": "^4.0",
         "fakerphp/faker": "^1.23",
         "filament/filament": "^4.0",
-        "lara-zeus/progress": "dev-dependabot/composer/filament/filament-tw-4.0",
-        "lara-zeus/translatable-pro": "^2.0",
+        "lara-zeus/progress": "^2.0",
+        "lara-zeus/translatable-pro": "*",
         "laravel/framework": "^12.0",
         "sentry/sentry-laravel": "^4.9"
     },
@@ -74,12 +74,12 @@
             "phpstan/extension-installer": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
         {
-            "type": "github",
-            "url": "https://github.com/lara-zeus/translatable-pro"
+            "type": "path",
+            "url": "../p/translatable-pro"
         }
     ]
 }
