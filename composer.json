@@ -12,7 +12,7 @@
         "filament/filament": "^3.2",
         "lara-zeus/progress": "^1.0",
         "jibaymcs/filament-tour": "dev-laravel-12",
-        "lara-zeus/translatable-pro": "dev-phras-resource-new-v3",
+        "lara-zeus/translatable-pro": "^1.0",
         "laravel/framework": "^12.0",
         "ralphjsmit/laravel-filament-seo": "^1.5",
         "sentry/sentry-laravel": "^4.9"
@@ -81,8 +81,8 @@
     "prefer-stable": true,
     "repositories": [
         {
-            "type": "path",
-            "url": "../p/translatable-pro"
+            "type": "github",
+            "url": "git@github.com:lara-zeus/translatable-pro"
         },
         {
             "type": "github",

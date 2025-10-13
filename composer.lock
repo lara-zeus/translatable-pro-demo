@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d288bf171fbe931584f32abf79f4dd27",
+    "content-hash": "4831ea7e498acc9010dac1c6bb06ded2",
     "packages": [
         {
             "name": "abdulmajeed-jamaan/filament-translatable-tabs",
@@ -2553,11 +2553,17 @@
         },
         {
             "name": "lara-zeus/translatable-pro",
-            "version": "dev-phras-resource-new-v3",
+            "version": "v1.0.18",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:lara-zeus/translatable-pro.git",
+                "reference": "cd0ac8f4ad98f555c9e17167e900201a941f1193"
+            },
             "dist": {
-                "type": "path",
-                "url": "../p/translatable-pro",
-                "reference": "6d4226b981b4353377db9345be31898dd46cbf57"
+                "type": "zip",
+                "url": "https://api.github.com/repos/lara-zeus/translatable-pro/zipball/cd0ac8f4ad98f555c9e17167e900201a941f1193",
+                "reference": "cd0ac8f4ad98f555c9e17167e900201a941f1193",
+                "shasum": ""
             },
             "require": {
                 "filament/filament": "^3.2",
@@ -2626,11 +2632,21 @@
                 "chat": "https://discord.com/channels/883083792112300104/1282750611586154516",
                 "contact": "https://larazeus.com/contact-us",
                 "docs": "https://larazeus.com/translatable-pro",
-                "email": "info@larazeus.com"
+                "email": "info@larazeus.com",
+                "source": "https://github.com/lara-zeus/translatable-pro/tree/v1.0.18",
+                "issues": "https://github.com/lara-zeus/translatable-pro/issues"
             },
-            "transport-options": {
-                "relative": true
-            }
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/atmonshi"
+                },
+                {
+                    "type": "custom",
+                    "url": "https://www.buymeacoffee.com/larazeus"
+                }
+            ],
+            "time": "2025-10-13T16:29:22+00:00"
         },
         {
             "name": "laravel/framework",
@@ -15107,7 +15123,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "jibaymcs/filament-tour": 20,
-        "lara-zeus/translatable-pro": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
