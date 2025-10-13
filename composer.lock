@@ -2230,6 +2230,86 @@
             "time": "2025-08-14T18:43:05+00:00"
         },
         {
+            "name": "lara-zeus/filament-plugin-tools",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lara-zeus/filament-plugin-tools.git",
+                "reference": "8eb510b0a85b942e035f30d61f3c6c9e7296c5f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lara-zeus/filament-plugin-tools/zipball/8eb510b0a85b942e035f30d61f3c6c9e7296c5f9",
+                "reference": "8eb510b0a85b942e035f30d61f3c6c9e7296c5f9",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "illuminate/contracts": "^11.28|^12.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.2|^3.0",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.0|^8.0",
+                "orchestra/testbench": "^8.0|^9.0|^10.0",
+                "pestphp/pest": "^2.0|^3.0",
+                "pestphp/pest-plugin-laravel": "^2.0|^3.0",
+                "pestphp/pest-plugin-livewire": "^3.0",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^10.1|^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaraZeus\\FilamentPluginTools\\FilamentPluginToolsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaraZeus\\FilamentPluginTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lara Zeus (Ash)",
+                    "email": "info@larazeus.com"
+                }
+            ],
+            "description": "a set of tools to configure your plugin",
+            "homepage": "https://larazeus.com/filament-plugin-tools",
+            "keywords": [
+                "filament-plugin-tools",
+                "filamentphp",
+                "lara-zeus",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/lara-zeus/filament-plugin-tools/issues",
+                "source": "https://github.com/lara-zeus/filament-plugin-tools"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/larazeus",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/atmonshi",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-06-12T00:05:31+00:00"
+        },
+        {
             "name": "lara-zeus/progress",
             "version": "2.0.0",
             "source": {
@@ -2310,20 +2390,21 @@
         },
         {
             "name": "lara-zeus/translatable-pro",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:lara-zeus/translatable-pro.git",
-                "reference": "cc02d30553e4bd56633a3642865387aa9ad84762"
+                "reference": "06c1613748fc4783d033cdb8de357eaf92e04757"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lara-zeus/translatable-pro/zipball/cc02d30553e4bd56633a3642865387aa9ad84762",
-                "reference": "cc02d30553e4bd56633a3642865387aa9ad84762",
+                "url": "https://api.github.com/repos/lara-zeus/translatable-pro/zipball/06c1613748fc4783d033cdb8de357eaf92e04757",
+                "reference": "06c1613748fc4783d033cdb8de357eaf92e04757",
                 "shasum": ""
             },
             "require": {
                 "filament/filament": "^4.0",
+                "lara-zeus/filament-plugin-tools": "^2.0",
                 "php": "^8.2",
                 "reedware/laravel-relation-joins": "^6.0|^8.0"
             },
@@ -2389,7 +2470,7 @@
                 "contact": "https://larazeus.com/contact-us",
                 "docs": "https://larazeus.com/translatable-pro",
                 "email": "info@larazeus.com",
-                "source": "https://github.com/lara-zeus/translatable-pro/tree/2.0.2",
+                "source": "https://github.com/lara-zeus/translatable-pro/tree/2.0.3",
                 "issues": "https://github.com/lara-zeus/translatable-pro/issues"
             },
             "funding": [
@@ -2402,7 +2483,7 @@
                     "url": "https://www.buymeacoffee.com/larazeus"
                 }
             ],
-            "time": "2025-09-07T10:24:05+00:00"
+            "time": "2025-10-13T16:02:24+00:00"
         },
         {
             "name": "laravel/framework",
