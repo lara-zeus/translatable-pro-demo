@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f77b146de6752b0f47f5fe23c5303e89",
+    "content-hash": "1d1bcdfb8a2f475c5f8d407121d5968b",
     "packages": [
         {
             "name": "abdulmajeed-jamaan/filament-translatable-tabs",
@@ -2310,11 +2310,17 @@
         },
         {
             "name": "lara-zeus/translatable-pro",
-            "version": "2.x-dev",
-            "dist": {
-                "type": "path",
-                "url": "../p/translatable-pro",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:lara-zeus/translatable-pro.git",
                 "reference": "cc02d30553e4bd56633a3642865387aa9ad84762"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lara-zeus/translatable-pro/zipball/cc02d30553e4bd56633a3642865387aa9ad84762",
+                "reference": "cc02d30553e4bd56633a3642865387aa9ad84762",
+                "shasum": ""
             },
             "require": {
                 "filament/filament": "^4.0",
@@ -2382,11 +2388,21 @@
                 "chat": "https://discord.com/channels/883083792112300104/1282750611586154516",
                 "contact": "https://larazeus.com/contact-us",
                 "docs": "https://larazeus.com/translatable-pro",
-                "email": "info@larazeus.com"
+                "email": "info@larazeus.com",
+                "source": "https://github.com/lara-zeus/translatable-pro/tree/2.0.2",
+                "issues": "https://github.com/lara-zeus/translatable-pro/issues"
             },
-            "transport-options": {
-                "relative": true
-            }
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/atmonshi"
+                },
+                {
+                    "type": "custom",
+                    "url": "https://www.buymeacoffee.com/larazeus"
+                }
+            ],
+            "time": "2025-09-07T10:24:05+00:00"
         },
         {
             "name": "laravel/framework",
@@ -14874,7 +14890,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "roave/security-advisories": 20
     },
