@@ -39,6 +39,7 @@ class Demo extends Page
                     ->required(),
 
                 Section::make('MultiLang Component Options')
+                    ->columnSpanFull()
                     ->description('You can configure the component per language. disable and enable or set required')
                     ->schema([
                         MultiLang::make('title')
@@ -50,6 +51,7 @@ class Demo extends Page
                             ->columnSpanFull(),
                     ]),
                 Section::make('Custom Component')
+                    ->columnSpanFull()
                     ->description(new HtmlString(
                         'and you can use any community components for the translations input'
                         .' like <a target="_blank" class="text-info-500" href="https://github.com/Abdulmajeed-Jamaan/filament-translatable-tabs">filament translatable tabs</a>'

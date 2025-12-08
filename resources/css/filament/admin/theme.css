@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 @import '../../../../vendor/filament/filament/resources/css/theme.css';
+@import '../../../../vendor/lara-zeus/translatable-pro/resources/css/plugin.css';
 
 @source '../../../../app/Filament';
 @source '../../../../resources/views/filament';
+@source '../../../../vendor/lara-zeus/translatable-pro/resources/views';
 
 .bord {
     border: 1px solid coral;

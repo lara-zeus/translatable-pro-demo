@@ -13,6 +13,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Resources\Resource;
 use Filament\Schemas\Components\Grid;
@@ -21,9 +22,10 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-// use FilamentTiptapEditor\TiptapEditor;
 use LaraZeus\Progress\Tables\Columns\CircleProgress;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
+
+// use FilamentTiptapEditor\TiptapEditor;
 
 class BookResource extends Resource
 {
@@ -40,14 +42,14 @@ class BookResource extends Resource
                     ->columnSpanFull(),
 
                 Grid::make()
+                    ->columnSpanFull()
                     ->columns()
                     ->schema([
                         MultiLang::make('desc')
-                            ->columnSpan(1),
-                        //                            ->setTabSchema(
-                        //                                TiptapEditor::make('desc')
-                        //                                    ->profile('minimal'),
-                        //                            ),
+                            ->columnSpan(1)
+                            ->setTabSchema(
+                                RichEditor::make('desc'),
+                            ),
 
                         Grid::make()
                             ->columnSpan(1)
@@ -61,6 +63,7 @@ class BookResource extends Resource
                     ]),
 
                 Section::make('meta')
+                    ->columnSpanFull()
                     ->extraAttributes(['class' => 'meta_form_input'])
                     ->relationship('meta')
                     ->schema([
