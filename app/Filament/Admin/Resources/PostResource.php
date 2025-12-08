@@ -37,6 +37,7 @@ class PostResource extends Resource
                     ->columnSpanFull(),
 
                 Section::make('seo')
+                    ->columnSpanFull()
                     ->relationship('seo')
                     ->compact()
                     ->columns()
