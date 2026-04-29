@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <x-layouts.nav/>
+        @include('layouts.nav')
 
         <div class="bg-sky-50 max-w-6xl mx-auto rounded-b-2xl shadow-md">
 
