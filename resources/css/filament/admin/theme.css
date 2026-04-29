@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @import '../../../../vendor/filament/filament/resources/css/theme.css';
 @import '../../../../vendor/lara-zeus/translatable-pro/resources/css/plugin.css';
@@ -12,7 +12,7 @@
 }
 
 .driver-overlay path {
-    @apply !fill-gray-500/50;
+    @apply fill-gray-500/50!;
 }
 
 .driver-popover * {
