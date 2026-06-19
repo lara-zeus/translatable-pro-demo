@@ -17,7 +17,6 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use LaraZeus\Progress\Tables\Columns\CircleProgress;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
 class BookResource extends Resource
@@ -77,8 +76,6 @@ class BookResource extends Resource
         return $table
             ->paginated([10, 25, 50])
             ->columns([
-                CircleProgress::make('translation_progress')
-                    ->toggleable(),
                 TextColumn::make('title')->phraseable(),
                 TextColumn::make('cat.name')->label('category')->phraseable(),
                 TextColumn::make('created_at'),
