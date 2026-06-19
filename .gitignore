@@ -16,5 +16,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+.DS_Store
 .$land-pro.drawio.bkp
 .$land-pro.drawio
