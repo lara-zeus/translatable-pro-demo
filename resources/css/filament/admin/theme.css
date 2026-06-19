@@ -1,17 +1,10 @@
-@import '/vendor/filament/filament/resources/css/theme.css';
-@import '/vendor/awcodes/filament-tiptap-editor/resources/css/plugin.css';
-@import '/vendor/lara-zeus/translatable-pro/resources/css/plugin.css';
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+@import '../../../../vendor/lara-zeus/translatable-pro/resources/css/plugin.css';
 
-@config 'tailwind.config.js';
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+@source '../../../../vendor/lara-zeus/translatable-pro/resources/**/*.blade.php';
 
 .bord{
     border: solid 1px coral;
-}
-
-.driver-overlay path{
-    @apply fill-gray-500/50 !important;
-}
-
-.driver-popover * {
-    font-family: var(--font-family), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }

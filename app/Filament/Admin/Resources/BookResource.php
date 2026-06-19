@@ -5,18 +5,18 @@ namespace App\Filament\Admin\Resources;
 use App\Filament\Admin\Resources\BookResource\Pages;
 use App\Filament\Admin\Resources\BookResource\RelationManagers\ChaptersRelationManager;
 use App\Models\Book;
+use Filament\Actions;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\Section;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use FilamentTiptapEditor\TiptapEditor;
 use LaraZeus\Progress\Tables\Columns\CircleProgress;
 use LaraZeus\TranslatablePro\Filament\Forms\Components\MultiLang;
 
@@ -24,12 +24,12 @@ class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
 
-    protected static ?string $navigationGroup = 'Book Store';
+    protected static string|\UnitEnum|null $navigationGroup = 'Book Store';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 MultiLang::make('title')
                     ->require()
                     ->columnSpanFull(),
@@ -40,8 +40,7 @@ class BookResource extends Resource
                         MultiLang::make('desc')
                             ->columnSpan(1)
                             ->setTabSchema(
-                                TiptapEditor::make('desc')
-                                    ->profile('minimal'),
+                                RichEditor::make('desc'),
                             ),
 
                         Grid::make()
@@ -89,13 +88,13 @@ class BookResource extends Resource
                     ->label('Category')
                     ->relationship('cat', 'id'),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\ViewAction::make(),
+            ->recordActions([
+                Actions\EditAction::make(),
+                Actions\ViewAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                Actions\BulkActionGroup::make([
+                    Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
