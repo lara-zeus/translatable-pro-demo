@@ -11,7 +11,6 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Resources\Resource;
-use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
@@ -29,44 +28,57 @@ class BookResource extends Resource
     {
         return $schema
             ->components([
-                MultiLang::make('title')
-                    ->require()
-                    ->columnSpanFull(),
-
-                Grid::make()
-                    ->columns()
+                Section::make('Content')
+                    ->columnSpanFull()
                     ->schema([
+                        MultiLang::make('title')
+                            ->require()
+                            ->columnSpanFull(),
+
                         MultiLang::make('desc')
-                            ->columnSpan(1)
+                            ->columnSpanFull()
                             ->setTabSchema(
                                 RichEditor::make('desc'),
                             ),
-
-                        Grid::make()
-                            ->columnSpan(1)
-                            ->columns(1)
-                            ->schema([
-                                Select::make('cat_id')
-                                    ->relationship('cat', 'name')
-                                    ->phrasesSearchable(),
-                                FileUpload::make('cover')->image(),
-                            ]),
                     ]),
 
-                Section::make('meta')
+                Section::make('Book settings')
+                    ->compact()
+                    ->columns([
+                        'default' => 1,
+                        'md' => 2,
+                    ])
+                    ->schema([
+                        FileUpload::make('cover')
+                            ->image(),
+
+                        Select::make('cat_id')
+                            ->relationship('cat', 'name')
+                            ->phrasesSearchable(),
+                    ]),
+
+                Section::make('Meta')
                     ->extraAttributes(['class' => 'meta_form_input'])
                     ->relationship('meta')
+                    ->compact()
+                    ->collapsible()
                     ->schema([
-                        MultiLang::make('title'),
+                        MultiLang::make('title')
+                            ->columnSpanFull(),
                     ]),
 
-                Repeater::make('chapters')
-                    ->extraAttributes(['class' => 'chapters_form_input'])
+                Section::make('Chapters')
                     ->columnSpanFull()
-                    ->grid()
-                    ->relationship('chapters')
+                    ->collapsible()
                     ->schema([
-                        MultiLang::make('title'),
+                        Repeater::make('chapters')
+                            ->extraAttributes(['class' => 'chapters_form_input'])
+                            ->columnSpanFull()
+                            ->grid()
+                            ->relationship('chapters')
+                            ->schema([
+                                MultiLang::make('title'),
+                            ]),
                     ]),
             ]);
     }
