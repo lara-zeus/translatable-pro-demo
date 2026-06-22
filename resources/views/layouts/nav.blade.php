@@ -12,9 +12,12 @@
             <a href="https://larazeus.com/translatable-pro" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-gray-700 no-underline flex items-center hover:bg-gray-200">
                 Get Translatable Pro
             </a>
-            <a href="https://github.com/lara-zeus/translatable-pro-demo" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-gray-700 no-underline flex items-center hover:bg-gray-200 rounded-tr-2xl">
+            <a href="https://github.com/lara-zeus/translatable-pro-demo" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-gray-700 no-underline flex items-center hover:bg-gray-200">
                 Demo On Github
             </a>
+            <div class="flex-no-grow flex-no-shrink relative py-3 pl-2 pr-4 leading-normal text-gray-700 no-underline flex items-center hover:bg-gray-200 rounded-tr-2xl">
+                @include('zeus-translatable-pro::hooks.locale-switcher')
+            </div>
         </div>
     </div>
 </nav>

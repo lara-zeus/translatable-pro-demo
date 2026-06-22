@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import '../../vendor/filament/filament/resources/css/theme.css';
 
 .bord{
     border: solid 1px coral;

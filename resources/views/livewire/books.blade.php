@@ -1,5 +1,4 @@
 <div class="container mx-auto px-5 py-10">
-
     <h5 class="mb-4">Queries Details</h5>
     <div class="prose grid grid-cols-2 gap-3 mb-20">
         @foreach($queries as $query)
