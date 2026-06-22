@@ -16,12 +16,11 @@ use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Contracts\View\View;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use JibayMcs\FilamentTour\FilamentTourPlugin;
 use LaraZeus\TranslatablePro\TranslatableProPlugin;
 
 class AdminPanelProvider extends PanelProvider
@@ -37,7 +36,7 @@ class AdminPanelProvider extends PanelProvider
             ->login(Login::class)
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->colors([
-                'primary' => Color::Sky,
+                'primary' => Color::hex('#f1948a'),
             ])
             ->renderHook(
                 'panels::footer',
@@ -54,8 +53,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 TranslatableProPlugin::make(),
-                //                FilamentTourPlugin::make()
-                //                    ->onlyVisibleOnce(),
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
@@ -68,7 +65,7 @@ class AdminPanelProvider extends PanelProvider
                 StartSession::class,
                 AuthenticateSession::class,
                 ShareErrorsFromSession::class,
-                VerifyCsrfToken::class,
+                PreventRequestForgery::class,
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,

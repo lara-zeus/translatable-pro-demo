@@ -6,6 +6,7 @@ return [
     'languages' => [
         ['name' => 'English', 'code' => 'en'],
         ['name' => 'Portuguese', 'code' => 'pt'],
+        ['name' => 'العربية', 'code' => 'ar'],
     ],
 
     'lang_switcher' => [

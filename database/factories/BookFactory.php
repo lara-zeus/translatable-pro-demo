@@ -11,6 +11,7 @@ class BookFactory extends Factory
 {
     public function definition(): array
     {
+        $rand = random_int(1, 9999);
         return [
             'title' => [
                 'ar' => fake()->name(),
@@ -20,7 +21,8 @@ class BookFactory extends Factory
                 'ar' => fake()->paragraph(),
                 'en' => fake()->paragraph(),
             ],
-            'cover' => 'https://picsum.photos/200/300?random='.rand(1, 9999),
+            'cover' => 'https://loremflickr.com/200/300/car?random='.$rand.'&lock='.$rand,
+            //'cover' => 'https://picsum.photos/200/300?random='.rand(1, 9999),
             'cat_id' => '33',
         ];
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6aaf6a97d75ff892cac675182dade80b",
+    "content-hash": "a6c27e3ec7efad9628c033397f97df30",
     "packages": [
         {
             "name": "abdulmajeed-jamaan/filament-translatable-tabs",
@@ -2526,11 +2526,17 @@
         },
         {
             "name": "lara-zeus/translatable-pro",
-            "version": "3.x-dev",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:lara-zeus/translatable-pro.git",
+                "reference": "dbfb78d5943349ae404fbe169427cd00bd3126e6"
+            },
             "dist": {
-                "type": "path",
-                "url": "../p/translatable-pro",
-                "reference": "4275e2a0169ca438849d73b0619e8588dfb5df40"
+                "type": "zip",
+                "url": "https://api.github.com/repos/lara-zeus/translatable-pro/zipball/dbfb78d5943349ae404fbe169427cd00bd3126e6",
+                "reference": "dbfb78d5943349ae404fbe169427cd00bd3126e6",
+                "shasum": ""
             },
             "require": {
                 "filament/filament": "^5.0",
@@ -2545,6 +2551,7 @@
                 "orchestra/testbench": "^10.0 || ^11.0",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan": "^2.1.18",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
                 "staudenmeir/belongs-to-through": "^2.17"
             },
             "type": "library",
@@ -2601,11 +2608,21 @@
                 "chat": "https://discord.com/channels/883083792112300104/1282750611586154516",
                 "contact": "https://larazeus.com/contact-us",
                 "docs": "https://larazeus.com/translatable-pro",
-                "email": "info@larazeus.com"
+                "email": "info@larazeus.com",
+                "source": "https://github.com/lara-zeus/translatable-pro/tree/3.0.1",
+                "issues": "https://github.com/lara-zeus/translatable-pro/issues"
             },
-            "transport-options": {
-                "relative": true
-            }
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/atmonshi"
+                },
+                {
+                    "type": "custom",
+                    "url": "https://www.buymeacoffee.com/larazeus"
+                }
+            ],
+            "time": "2026-06-22T17:27:05+00:00"
         },
         {
             "name": "laravel/ai",
@@ -15405,7 +15422,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "roave/security-advisories": 20
     },

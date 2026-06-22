@@ -1,7 +1,79 @@
+@import url('https://fonts.bunny.net/css?family=inter:400,500,600,700,800|ibm-plex-sans-arabic:400,500,600,700');
 @import "tailwindcss";
 @import '../../vendor/filament/filament/resources/css/theme.css';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
-.bord{
-    border: solid 1px coral;
+
+@theme {
+    --font-sans: 'Inter', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    --color-accent-50: #c6e9e2;
+    --color-accent-100: #b8e4db;
+    --color-accent-200: #9ad8cc;
+    --color-accent-300: #7dcdbd;
+    --color-accent-400: #5fc1ae;
+    --color-accent-500: #45b39d;
+    --color-accent-600: #358b79;
+    --color-accent-700: #266256;
+    --color-accent-800: #163a32;
+    --color-accent-900: #07110f;
+    --color-accent-950: #000000;
+    --color-accent: #45b39d;
+
+    --color-brand-50: #fdf2f0;
+    --color-brand-100: #fce7e5;
+    --color-brand-200: #f9d2ce;
+    --color-brand-300: #f6beb8;
+    --color-brand-400: #f4a9a1;
+    --color-brand-500: #f1948a;
+    --color-brand-600: #eb6658;
+    --color-brand-700: #e53826;
+    --color-brand-800: #bc2717;
+    --color-brand-900: #8a1c11;
+    --color-brand-950: #71170e;
+    --color-brand: #f1948a;
 }
 
+@layer base {
+    :root {
+        /* Allow height/`auto` keyword interpolation so <details> can animate open. */
+        interpolate-size: allow-keywords;
+    }
+
+    body {
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'ss01';
+    }
+
+    /* Flip horizontally-directional icons in RTL without per-element variants. */
+    [dir='rtl'] .rtl-flip {
+        scale: -1 1;
+    }
+
+    /* Smooth expand/collapse for <details class="details-smooth">. */
+    details.details-smooth::details-content {
+        block-size: 0;
+        overflow: clip;
+        opacity: 0;
+        transition:
+            block-size 0.35s ease,
+            opacity 0.3s ease,
+            content-visibility 0.35s allow-discrete;
+    }
+
+    details.details-smooth[open]::details-content {
+        block-size: auto;
+        opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        details.details-smooth::details-content {
+            transition: none;
+        }
+    }
+}
+
+/* Soft dotted grid used behind the hero. */
+@utility bg-dotted {
+    background-image: radial-gradient(var(--color-brand-200) 1px, transparent 1px);
+    background-size: 22px 22px;
+}
